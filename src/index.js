@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import 'semantic-ui-css/semantic.min.css' //modiv gatau
+import GApp from './GApp';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <GApp />
   </BrowserRouter>,
   document.getElementById('root')
 );
