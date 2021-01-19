@@ -2,6 +2,21 @@
   margin: 0;
 }
 
+.gallery {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  width: 24vw;
+  padding: 10p;
+  margin: 5px;
+}
+
+.imgframe{
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
 }
