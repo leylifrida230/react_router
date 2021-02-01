@@ -4,10 +4,12 @@ import Navbar from "./components/Navbar"
 import {Link} from 'react-router-dom';
 import {Switch, Route} from 'react-router-dom';
 
-import Beranda from "./Beranda";
-import TentangSaya from "./TentangSaya";
-import Karya from "./Karya";
-import Kontak from "./Kontak";
+import Beranda from "./pages/Beranda";
+import TentangSaya from "./pages/TentangSaya";
+import Karya from "./pages/Karya";
+import Contact from "./pages/Contact";
+import GApp from './GApp'
+import BookGallery from './pages/BookGallery'
 
 class App extends React.Component{
   render(){
@@ -24,7 +26,9 @@ class App extends React.Component{
           <Route exact path="/" component={Beranda}/>
           <Route path="/tentangsaya" component={TentangSaya} />
           <Route path="/karya" component={Karya} />
-          <Route path="/kontak" component={Kontak} />
+          <Route path="/bookgallery" component={BookGallery} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/Gallery" component={GApp} />
         </Switch>
       </div>
     )
