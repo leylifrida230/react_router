@@ -1,7 +1,6 @@
 
-import React from "react"
-import { BreadcrumbDivider } from "semantic-ui-react"
-import Card from '../components/Card'
+import React from "react";
+import Card from '../components/Card';
 
 class BookGallery extends React.Component{
     constructor(){
