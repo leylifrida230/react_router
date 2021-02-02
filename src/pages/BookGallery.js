@@ -1,9 +1,7 @@
-
-import React from "react";
-import Card from '../components/Card';
+import React from "react"
+import Card from '../components/Card'
 import $ from "jquery"
-import 'bootstrap/dist/js/bootstrap.bundle'
-
+import "bootstrap/dist/js/bootstrap.bundle"
 class BookGallery extends React.Component{
     constructor(){
         super()
@@ -12,19 +10,20 @@ class BookGallery extends React.Component{
                 {
                     isbn:"12345", judul:"Bumi", penulis:"Tere Liye",
                     penerbit:"CV Harapan Kita", harga:90000,
-                    cover: "https://i.pinimg.com/564x/e1/df/fc/e1dffcf4f2057935640e8a498dc61db9.jpg"
+                    cover: "https://drive.google.com/uc?id=1ui-jyKgu3DqFyo7VKJu-FFXkaNQN3aSg"
                 },
                 {
                     isbn:"12344", judul:"Matahari", penulis:"Tere Liye",
                     penerbit:"CV Harapan Putra", harga:95000,
-                    cover:"https://i.pinimg.com/564x/41/58/69/4158694a946d856a699a683556703d4f.jpg"
+                    cover:"https://drive.google.com/uc?id=1ui-jyKgu3DqFyo7VKJu-FFXkaNQN3aSg"
                 },
                 {
                     isbn:"12343", judul:"Bintang", penulis:"Tere Liye",
                     penerbit:"CV Nusa Bangsa", harga:85000,
-                    cover:"https://i.pinimg.com/564x/76/6d/38/766d38ba7f9a2af72dd3fd959055d63a.jpg"
+                    cover:"https://drive.google.com/uc?id=1ui-jyKgu3DqFyo7VKJu-FFXkaNQN3aSg"
                 }
             ],
+
             action: "",
             isbn: "",
             judul: "",
@@ -44,7 +43,7 @@ class BookGallery extends React.Component{
         // menampilkan component modal 
         $("#modal_buku").modal("show")
         this.setState({
-            isbn: Math.random(1,1000000),
+            isbn: Math.random(1,10000000),
             judul: "",
             penulis: "",
             penerbit: "",
@@ -171,31 +170,31 @@ class BookGallery extends React.Component{
                             <div className="modal-body">
                                 <form onSubmit={ev => this.Save(ev)}>
                                     Judul Buku
-                                    <inpit type="text" className="form-control mb-2"
+                                    <input type="text" className="form-control mb-2"
                                     value={this.state.judul}
                                     onChange={ev => this.setState({judul: ev.target.value}) }
                                     required />
 
                                     Penulis Buku
-                                    <inpit type="text" className="form-control mb-2"
+                                    <input type="text" className="form-control mb-2"
                                     value={this.state.penulis}
                                     onChange={ev => this.setState({penulis: ev.target.value}) }
                                     required />
 
                                     Penerbit Buku
-                                    <inpit type="text" className="form-control mb-2"
+                                    <input type="text" className="form-control mb-2"
                                     value={this.state.penerbit}
                                     onChange={ev => this.setState({penerbit: ev.target.value}) }
                                     required />
 
                                     Harga Buku
-                                    <inpit type="number" className="form-control mb-2"
+                                    <input type="number" className="form-control mb-2"
                                     value={this.state.harga}
                                     onChange={ev => this.setState({harga: ev.target.value}) }
                                     required />
 
                                     Cover Buku
-                                    <inpit type="url" className="form-control mb-2"
+                                    <input type="url" className="form-control mb-2"
                                     value={this.state.cover}
                                     onChange={ev => this.setState({cover: ev.target.value}) }
                                     required />
@@ -208,7 +207,7 @@ class BookGallery extends React.Component{
                         </div>
                     </div>
                 </div>
-
+                
             </div>
         )
     }
