@@ -26,6 +26,18 @@ class Card extends React.Component{
                             <h6 className="text-danger">
                                 Harga: Rp{this.props.harga}
                             </h6>
+
+                            {/** Button untuk mengedit */}
+                            <button className="btn btn-sm btn-primary m-1"
+                            onClick={this.props.onEdit}>
+                                Edit
+                            </button>
+
+                            {/** Button untuk menghapus */}
+                            <button className="btn btn-sm btn-danger m-1"
+                            onClick={this.props.onDrop}>
+                                Hapus
+                            </button>
                         </div>
                     </div>
                 </div>
