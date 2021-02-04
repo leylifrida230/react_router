@@ -17,12 +17,15 @@ class Card extends React.Component{
                             <h5 className="text-info">
                                 {this.props.judul}
                             </h5>
+
                             <h6 className="text-dark">
                                 Penulis: {this.props.penulis}
                             </h6>
+
                             <h6 className="text-dark">
                                 Penerbit: {this.props.penerbit}
                             </h6>
+                            
                             <h6 className="text-danger">
                                 Harga: Rp{this.props.harga}
                             </h6>

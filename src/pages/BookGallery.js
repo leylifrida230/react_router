@@ -10,7 +10,7 @@ class BookGallery extends React.Component{
                 {
                     isbn:"12345", judul:"Bumi", penulis:"Tere Liye",
                     penerbit:"CV Harapan Kita", harga:90000,
-                    cover: "https://drive.google.com/uc?id=1ui-jyKgu3DqFyo7VKJu-FFXkaNQN3aSg"
+                    cover:"https://drive.google.com/uc?id=1ui-jyKgu3DqFyo7VKJu-FFXkaNQN3aSg"
                 },
                 {
                     isbn:"12344", judul:"Matahari", penulis:"Tere Liye",
