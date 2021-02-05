@@ -10,6 +10,8 @@ import Karya from "./pages/Karya";
 import Contact from "./pages/Contact";
 import GApp from './GApp'
 import BookGallery from './pages/BookGallery'
+import Failed from './pages/Failed'
+import Cart from './pages/Cart';
 
 class App extends React.Component{
   render(){
@@ -27,8 +29,10 @@ class App extends React.Component{
           <Route path="/tentangsaya" component={TentangSaya} />
           <Route path="/karya" component={Karya} />
           <Route path="/bookgallery" component={BookGallery} />
+          <Route path="/cart" component={Cart} />
           <Route path="/contact" component={Contact} />
           <Route path="/Gallery" component={GApp} />
+          <Route path="/failed" component={Failed} />
         </Switch>
       </div>
     )
