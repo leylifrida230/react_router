@@ -18,16 +18,15 @@ class Cart extends React.Component{
     EditCart = (item) => {
         $("#modal_cart").modal("show")
         this.setState({
-            cart: item.cart,
-            user: item.user,
-            total: item.total,
+            isbn: item.isbn,
+            jumlahBeli: item.jumlahBeli,
             action: "update",
             selectedItem: item
         })
     }
 
-    saveCart = (e) => {
-        e.preventDefault();
+    saveCart = (event) => {
+        event.preventDefault();
         let tempCart = this.state.cart
 
         if(this.state.action === "update"){
@@ -48,13 +47,14 @@ class Cart extends React.Component{
     DropCart = (item) => {
         if(window.confirm("apakah anda yakin ingin menghapus data ini?")){
             let tempCart = this.state.cart
-            let index = tempCart.indexOf(item)
+            // posisi index yang akan di hapus
+            let index = tempCart.findIndex(item => item.isbn === this.state.isbn)
 
             tempCart.splice(index, 1)
 
-            this.setState({
-                cart: tempCart
-            })
+            this.setState({ cart: tempCart })
+
+            localStorage.setItem("cart", JSON.stringify(tempCart))
         }
 
     }
@@ -103,34 +103,10 @@ class Cart extends React.Component{
                             {/* modal body */}
                             <div className="modal-body">
                                 <form onSubmit={ev => this.saveCart(ev)}>
-                                    Judul Buku
+                                    Jumlah Beli 
                                     <input type="text" className="form-control mb-2"
-                                    value={this.state.judul}
-                                    onChange={ ev => this.setState({judul: ev.target.value}) }
-                                    required />
-                                    
-                                    Penulis Buku
-                                    <input type="text" className="form-control mb-2"
-                                    value={this.state.penulis}
-                                    onChange={ ev => this.setState({penulis: ev.target.value}) }
-                                    required />
-                                    
-                                    Penerbit Buku
-                                    <input type="text" className="form-control mb-2"
-                                    value={this.state.penerbit}
-                                    onChange={ ev => this.setState({penerbit: ev.target.value}) }
-                                    required />
-                                    
-                                    Harga Buku
-                                    <input type="number" className="form-control mb-2"
-                                    value={this.state.harga}
-                                    onChange={ ev => this.setState({harga: ev.target.value}) }
-                                    required />
-                                    
-                                    Cover Buku
-                                    <input type="url" className="form-control mb-2"
-                                    value={this.state.cover}
-                                    onChange={ ev => this.setState({cover: ev.target.value}) }
+                                    value={this.state.jumlahBeli}
+                                    onChange={ ev => this.setState({jumlahBeli: ev.target.value}) }
                                     required />
 
                                     <button className="btn btn-info btn-block" type="submit">
@@ -174,7 +150,8 @@ class Cart extends React.Component{
                                         </td>
                                         <td>
                                             
-                                            <button className="btn btn-primary m-1">
+                                            <button className="btn btn-primary m-1"
+                                            onClick={() => this.EditCart(item)}>
                                                 Edit
                                             </button>
                                            
