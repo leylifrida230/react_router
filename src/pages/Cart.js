@@ -11,7 +11,7 @@ class Cart extends React.Component{
             User: "", // untuk menyimpan data user
             total: 0, // untuk menyimpan data total belanja
             action: "",
-            selectedItem: null
+            selectedItem: null,
         }
     }
 
